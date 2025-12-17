@@ -1,0 +1,139 @@
+/* =========================================================
+   UMKM Donut Manis - stylesheet
+   ========================================================= */
+
+/* Variabel tema (memudahkan ganti warna brand) */
+:root{
+  --brand-brown:#532a10;     /* warna utama brand */
+  --brand-accent:#de9e4c;    /* warna aksen (misal garis testimoni) */
+  --bg-soft:#e9e1cf;         /* background lembut untuk hero */
+}
+
+/* Style dasar seluruh halaman */
+body{
+  font-family: 'Segoe UI', sans-serif; /* font modern */
+  background-color: #fefefe;           /* background putih lembut */
+  color:#333;                          /* teks abu gelap */
+  margin:0;
+  padding:0;
+}
+
+/* Header umum (jika Anda pakai <header> di halaman lain) */
+header{
+  background-color: var(--brand-brown);
+  color:#fff;
+  padding:20px;
+  text-align:center;
+}
+
+/* Warna judul */
+h1,h2,h3{
+  color: var(--brand-brown);
+}
+
+/* Hero section (bagian pembuka) */
+.hero{
+  background: var(--bg-soft);
+  padding:60px 0;
+  text-align:center;
+}
+
+/* List fitur (hilangkan bullet bawaan) */
+.fitur-list{
+  list-style:none;
+  padding-left:0;
+}
+
+/* Item fitur dibuat seperti “badge/card kecil” */
+.fitur-list li{
+  margin-bottom:10px;
+  background:#e8ebee;
+  padding:10px;
+  border-radius:6px;
+}
+
+/* Card testimoni: ada garis aksen di kiri */
+.testimoni .card{
+  background:#fff;
+  padding:20px;
+  border-left:5px solid var(--brand-accent);
+  box-shadow:0 2px 6px rgba(0,0,0,.1);
+  border-radius:6px;
+  margin-top:20px;
+}
+
+/* Style gambar agar rapi dan konsisten */
+img{
+  max-width:100%;
+  height:auto;
+  display:block;
+  margin:10px auto;
+  border-radius:10px;
+  box-shadow:0 4px 8px rgba(0,0,0,.1);
+}
+
+/* =========================================================
+   Form (untuk kontak.html)
+   ========================================================= */
+form{
+  max-width: 720px;            /* batas lebar agar tidak kepanjangan */
+  margin: 0 auto;              /* center */
+  background-color:#f4f4f4;    /* panel abu lembut */
+  padding:20px;
+  border-radius:8px;
+  box-shadow:0 0 10px rgba(0,0,0,.1);
+}
+
+/* Pesan error / sukses */
+.error{ color:red; font-size:.85rem; }
+.success{ color:green; font-weight:600; }
+
+/* Kelas validasi (biasanya ditambah lewat JS) */
+.is-invalid{ border-color:red !important; outline:none; }
+.is-valid{ border-color:green !important; }
+
+/* =========================================================
+   Galeri (untuk galeri.html)
+   ========================================================= */
+.galeri{
+  display:flex;
+  flex-wrap:wrap;              /* item turun ke baris baru bila penuh */
+  gap:20px;
+  justify-content:center;
+  padding:20px;
+}
+
+/* Card item galeri */
+.galeri .card{
+  flex:1 1 250px;              /* responsive: minimal 250px */
+  max-width:300px;
+  background:#fff;
+  border:1px solid #ccc;
+  border-radius:10px;
+  box-shadow:2px 2px 8px rgba(0,0,0,.1);
+  overflow:hidden;
+  text-align:center;
+  padding:10px;
+}
+
+/* Gambar di dalam card galeri */
+.galeri .card img{
+  width:100%;
+  height:auto;
+  border-bottom:1px solid #ddd;
+}
+
+/* Responsif: jika layar kecil, galeri jadi kolom */
+@media (max-width:768px){
+  .galeri{ flex-direction:column; align-items:center; }
+  .galeri .card{ max-width:90%; }
+}
+
+/* Footer */
+footer{
+  background-color: var(--brand-brown);
+  color:#fff;
+  text-align:center;
+  padding:20px;
+  margin-top:40px;
+}
